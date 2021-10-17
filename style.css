@@ -37,6 +37,7 @@ h1 {
   width: 100%;
   height: 80px;
   background-color: #5D5FEF;
+  margin-bottom: 30px;
 }
 
 .areaCentral {
@@ -49,9 +50,10 @@ h1 {
   align-items: center;  
 }
 
-.novaTarefa {
+.boxNovaTarefa {
   width: 90%;
   height: 100px;
+  margin-bottom: 20px;
   background-color: white;  
   display: flex;
   align-items: center;
@@ -73,29 +75,51 @@ h1 {
   width: 90%;
   height: 100%;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+}
+
+.novaTarefa {
+  width: 100%;
+  height: 72px;
+  border: 1px solid #5F6368;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  font-size: 18px;
+  color: #5F6368;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
 }
 
 .botoes {
   width: 96px;
-  height: 48px;
+  height: 100%;
   display: flex;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .botaoConfirma {
   width: 48px;
-  height: 48px;
+  height: 100%;
   background-color: #3EAF3F;
   display: flex;
 }
 
+.botaoConfirma:hover {
+  background-color: green;
+}  
+
 .botaoCancela {
   width: 48px;
-  height: 48px;
+  height: 100%;
   background-color: #E14942;
   display: flex; 
   border-radius: 0px 8px 8px 0px;
+}
+
+.botaoCancela:hover {
+  background-color: rgb(170, 10, 10);
 }
 
 .icones {
@@ -103,4 +127,37 @@ h1 {
   font-size: 26px;
   color: white;
   padding: 10px;
+}
+
+.checkboxLabel {
+  align-self: center;
+}
+
+input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked {
+  background-color: black;
+}
+
+input:checked + label {
+  text-decoration: line-through;
+}
+  
+label {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.lixeira {
+  font-family: "Material Icons";
+  font-size: 26px;
+  color: black;
+  padding: 20px;
+  cursor: pointer;
 }
