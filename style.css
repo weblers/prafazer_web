@@ -69,6 +69,7 @@ h1 {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .listaDeTarefas {
@@ -94,8 +95,7 @@ h1 {
 .botoes {
   width: 96px;
   height: 100%;
-  display: flex;
-  align-self: flex-end;
+  display: flex;  
   cursor: pointer;
 }
 
@@ -104,6 +104,8 @@ h1 {
   height: 100%;
   background-color: #3EAF3F;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .botaoConfirma:hover {
@@ -115,7 +117,8 @@ h1 {
   height: 100%;
   background-color: #E14942;
   display: flex; 
-  border-radius: 0px 8px 8px 0px;
+  align-items: center;
+  justify-content: center;  
 }
 
 .botaoCancela:hover {
@@ -126,7 +129,6 @@ h1 {
   font-family: "Material Icons";
   font-size: 26px;
   color: white;
-  padding: 10px;
 }
 
 .checkboxLabel {
