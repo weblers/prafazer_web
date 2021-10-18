@@ -6,9 +6,69 @@
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
   <title>Pra fazer - controle de tarefas</title>
 </head>
 <body>
-  <h1>Pra fazer - controle de tarefas</h1>
+
+  <div class = "fullScreen">
+
+    <div class = "topo">
+      <h1>Pra fazer</h1>
+    </div>
+        
+    <div class = "areaCentral">
+      
+      <div class = "boxNovaTarefa">
+
+        <div class = "barraNovaTarefa">
+          <input type="text" placeholder="O que queremos lembrar de fazer hoje?">
+          <div class = "botoes">
+            <div class = "botaoConfirma">
+              <span class="icones">done</span>
+            </div>
+            <div class = "botaoCancela">
+              <span class="icones">close</span>
+            </div>
+          </div>
+            
+        </div>        
+      
+      </div>
+
+      <div class = "listaDeTarefas">
+
+        <div class = "novaTarefa">
+          <div class = "checkboxLabel">
+            <input id="checkbox-1" type="checkbox">
+            <label for="checkbox-1">Comprar leite</label>
+          </div>
+          <span class="lixeira">delete_outline</span>
+        </div>
+
+        <div class = "novaTarefa">
+          <div class = "checkboxLabel">
+            <input id="checkbox-2" type="checkbox">
+            <label for="checkbox-2">Revisar o carro</label>
+          </div>
+          <span class="lixeira">delete_outline</span>
+        </div>
+
+        <div class = "novaTarefa">
+          <div class = "checkboxLabel">
+            <input id="checkbox-3" type="checkbox">
+            <label for="checkbox-3">Pagar a luz</label>
+          </div>
+          <span class="lixeira">delete_outline</span>
+        </div>
+        
+      </div>
+
+    </div>
+
+
+  </div>
+
 </body>
 </html>
