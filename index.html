@@ -23,12 +23,12 @@
       <div class = "boxNovaTarefa">
 
         <div class = "barraNovaTarefa">
-          <input type="text" placeholder="O que queremos lembrar de fazer hoje?">
+          <input type="text" id="txtTarefa" placeholder="O que queremos lembrar de fazer hoje?">
           <div class = "botoes">
-            <div class = "botaoConfirma">
-              <span class="icones">done</span>
+            <div class = "botaoConfirma" id="btnConfirma">
+              <span class="icones">done</span>  
             </div>
-            <div class = "botaoCancela">
+            <div class = "botaoCancela" id="btnCancela">
               <span class="icones">close</span>
             </div>
           </div>
@@ -37,38 +37,17 @@
       
       </div>
 
-      <div class = "listaDeTarefas">
+      <div class = "listaDeTarefas" id = "containerLista">
 
-        <div class = "novaTarefa">
-          <div class = "checkboxLabel">
-            <input id="checkbox-1" type="checkbox">
-            <label for="checkbox-1">Comprar leite</label>
-          </div>
-          <span class="lixeira">delete_outline</span>
-        </div>
-
-        <div class = "novaTarefa">
-          <div class = "checkboxLabel">
-            <input id="checkbox-2" type="checkbox">
-            <label for="checkbox-2">Revisar o carro</label>
-          </div>
-          <span class="lixeira">delete_outline</span>
-        </div>
-
-        <div class = "novaTarefa">
-          <div class = "checkboxLabel">
-            <input id="checkbox-3" type="checkbox">
-            <label for="checkbox-3">Pagar a luz</label>
-          </div>
-          <span class="lixeira">delete_outline</span>
-        </div>
+        
         
       </div>
 
     </div>
 
-
   </div>
+
+  <script src="app.js"></script>
 
 </body>
 </html>
