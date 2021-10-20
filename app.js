@@ -1,20 +1,15 @@
 'use strict';
 
-let banco = [
-    {tarefaBanco: "Pagar a luz", status: ""},
-    {tarefaBanco: "Comprar leite", status: "checked"},
-    {tarefaBanco: "Passear com o cachorro", status: ""},
-    {tarefaBanco: "Consertar a bicicleta", status: "checked"}
-]
+let banco = [];
 
-const criarTarefa = (textoTarefa, status) => {
+const criarTarefa = (textoTarefa, status, indice) => {
     const tarefa = document.createElement('div');
     tarefa.classList.add('novaTarefa');
     tarefa.innerHTML = `
         <div class = "checkboxLabel">
-        <input id="checkbox" type="checkbox" ${status}>
+        <input id="checkbox" type="checkbox" ${status} data-indice=${indice}>
         <label>${textoTarefa}</label>
-        </div><span class="lixeira">delete_outline</span>`;
+        </div><span id = "deletar" class="lixeira" data-indice=${indice}>delete_outline </span>`;
 
     document.getElementById('containerLista').appendChild(tarefa);
 }
@@ -28,7 +23,7 @@ const limparTarefas = () => {
 
 const atualizarTela = () => {
     limparTarefas ();
-    banco.forEach (tarefa => criarTarefa(tarefa.tarefaBanco, tarefa.status));
+    banco.forEach ((tarefa, indice) => criarTarefa(tarefa.tarefaBanco, tarefa.status, indice));
 } 
 
 const inserirItem = () => {
@@ -39,12 +34,35 @@ const inserirItem = () => {
     }
     
     banco.push ({'tarefaBanco': texto, 'status': ''});
-    document.getElementById('txtTarefa').value = '';
-    document.getElementById('txtTarefa').focus();
+    apagarTxt();
     atualizarTela();
-
 }
 
+const apagarTxt = () => {
+    document.getElementById('txtTarefa').value = '';
+    document.getElementById('txtTarefa').focus();
+}
+
+const clickItem = (evento) => {
+    const elemento = evento.target;
+    const indice = elemento.dataset.indice;
+
+    if (elemento.type === "checkbox") {
+
+        if (banco[indice].status === "checked") {
+            banco[indice].status = "";
+        }else  {
+            banco[indice].status = "checked";
+        } 
+              
+    }else if (elemento.tagName === "SPAN") {
+        banco.splice(indice, 1);
+        atualizarTela();
+    }
+}
+  
 atualizarTela();
 
 document.getElementById('btnConfirma').addEventListener('click', inserirItem);
+document.getElementById('btnCancela').addEventListener('click', apagarTxt);
+document.getElementById('containerLista').addEventListener('click', clickItem);
